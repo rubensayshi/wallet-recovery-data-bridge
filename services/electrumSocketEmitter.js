@@ -40,7 +40,7 @@ connect = function(serverAddr, serverPort) {
                 setTimeout(heartbeat, 60 * 1000)
             })();
         }).catch((error) => {
-            logger.info(error.error);
+            logger.info("Failed to connect: " + error.error);
             Socket.close(error.socket);
         });
     }
